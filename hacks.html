@@ -511,12 +511,58 @@ class: center, middle, inverse
 ## Faces
 ]
 .right-column[
-* https://www.puppet.com/docs/puppet/5.5/deprecated_api.html
 
-* https://github.com/puppetlabs/puppet/tree/main/lib/puppet/face
+* https://puppetcommunity.slack.com/archives/C0W1X7ZAL/p1705520404613479?thread_ts=1705511900.536469&cid=C0W1X7ZAL
+
+![img](2024-01-17_22-17.png)
+
+]
+
+???
+
+* An awesome way to extend the Puppet CLI
+* Allows you to access puppet as a lib
+
+---
+
+.left-column[
+## Faces
+]
+
+.right-column[
+* Faces were "deprecated" but won't be removed: https://www.puppet.com/docs/puppet/5.5/deprecated_api.html
+
+* Kelsey Hightower explaining faces in 2011: https://www.youtube.com/watch?v=WUlYEJ-fpfU
+
+* Faces are used heavily within Puppet: https://github.com/puppetlabs/puppet/tree/main/lib/puppet/face
+]
+
+???
+
+---
+
+.left-column[
+## Faces
+### config
+]
+
+.right-column[
+* `puppet config print`
+
+* `puppet config print certname`
+
+* `puppet config print certname --section`
+
+* `puppet config set 'option' 'value' --section 'section'`
 ]
 
 
+???
+
+* config face is builtin
+* can read and write from puppet.conf
+* can disable defaults from the code that aren't in puppet.conf
+* identifies path to puppet.conf on its own
 ---
 
 .left-column[

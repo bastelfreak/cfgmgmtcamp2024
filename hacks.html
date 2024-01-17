@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Vox Pupuli - Behind every successful open source project is a vibrant community</title>
+    <title>Puppet hacks you didn't know you were looking for</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <style type="text/css">
       @font-face {
@@ -247,16 +247,16 @@
     <textarea id="source">
 class: center, middle, inverse
 
-# What Open Source can<br/> do for your business
+# Puppet<br/>Hacks
 
 ???
 
 ---
 class: center, middle, inversedoubleheading
 
-# What Open Source can<br/> do for your business
+# Puppet Hacks
 
-## Or why you should publish your Puppet modules
+## <br/>you didn't know you were looking for
 
 ???
 
@@ -280,8 +280,258 @@ class: center, middle, inversedoubleheading
 * who has seen this picture before because I reviewed/merged your pull request?
 
 ---
+class: center, middle, inverse
+
+# Resource Abstraction<br/>Layer
+
+???
+
+---
+.left-column[
+## RAL
+]
+
+.right-column[
+* Puppet uses RAL - Resource Abstraction Layer
+
+]
+
+???
+
+Who knows the RAL?
+
+---
+.left-column[
+## RAL
+]
+
+.right-column[
+* Puppet uses RAL - Resource Abstraction Layer
+
+* Abstracts package manager away into Puppet resources
+
+]
+
+---
+.left-column[
+## RAL
+]
+
+.right-column[
+* Puppet uses RAL - Resource Abstraction Layer
+
+* Abstracts package manager away into Puppet resources
+
+* Implemented via types and providers
+
+```puppet
+package { 'htop':
+  ensure => 'installed',
+}
+```
+]
+
+---
+.left-column[
+## RAL
+]
+
+.right-column[
+* Puppet uses RAL - Resource Abstraction Layer
+
+* Abstracts package manager away into Puppet resources
+
+* Implemented via types and providers
+
+* List available types on CLI
+
+* `puppet resource --types`
+]
+
+---
+class: center, middle, inverse
+
+# Find<br/>Software
+
+???
+
+---
+.left-column[
+## RAL
+### Find Software
+]
+
+.right-column[
+* RAL can be triggered on the CLI!
+
+* `puppet resource package foo`
+
+```puppet
+package { 'htop':
+  ensure   => '3.3.0-1',
+  provider => 'pacman',
+}
+```
+]
+
+---
 
 
+.left-column[
+## RAL
+### Find Software
+]
+
+.right-column[
+* RAL can be triggered on the CLI!
+
+* `puppet resource package foo`
+
+* Can output all instances of a resource type
+
+* `puppet resource package`
+
+```puppet
+package { 'yamllint':
+  ensure   => '1.33.0-1',
+  provider => 'pacman',
+}
+package { 'yard':
+  ensure   => ['0.9.26'],
+  provider => 'gem',
+}
+```
+]
+
+???
+
+* Puppet needs to know the current state of a resource before code is applied
+* required to detect if changes are needed
+
+
+---
+
+class: center, middle, inverse
+
+# Modify<br/>Software
+
+---
+
+.left-column[
+## RAL
+### Find Software
+### Modify Software
+]
+
+.right-column[
+* Can modify a resource instance
+
+* `puppet resource package htop ensure=absent`
+
+```puppet
+Notice: /Package[htop]/ensure: removed
+package { 'htop':
+  ensure   => 'absent',
+  provider => 'pacman',
+}
+```
+]
+
+???
+
+* You can also pass the other parameters
+---
+
+.left-column[
+## RAL
+### Find Software
+### Modify Software
+]
+
+.right-column[
+* Can modify a resource instance
+
+* `puppet resource package foo ensure=absent`
+
+* Can modify a resource instance with debug output!
+
+* `puppet resource package foo ensure=absent --debug`
+]
+
+???
+
+---
+
+.left-column[
+## RAL
+### Find Software
+### Modify Software
+]
+
+.right-column[
+* Can modify a resource instance
+
+* `puppet resource package foo ensure=absent`
+
+* Can modify a resource instance with debug output!
+
+* `puppet resource package foo ensure=absent --debug`
+
+* Can simulate a change!
+
+* `puppet resource package foo ensure=absent --debug --noop`
+]
+
+???
+
+* Puppet CLI args like debug and noop can be passed to every `puppet resource package`
+---
+
+.left-column[
+## RAL
+]
+.right-column[
+* Further documentation
+
+* https://petersouter.xyz/the-puppet-resource-abstraction-layer-ral-explained-part-1/
+
+* https://www.puppet.com/docs/puppet/7/man/resource
+]
+
+---
+class: center, middle, inverse
+
+# Puppet<br/>Faces
+
+???
+
+---
+
+.left-column[
+## Faces
+]
+.right-column[
+* https://www.puppet.com/docs/puppet/5.5/deprecated_api.html
+
+* https://github.com/puppetlabs/puppet/tree/main/lib/puppet/face
+]
+
+
+---
+
+.left-column[
+## Find Software
+## Cleanup
+]
+
+.right-column[
+
+]
+
+???
+
+
+---
 
 .left-column[
 ## Conclusion

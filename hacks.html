@@ -543,6 +543,23 @@ class: center, middle, inverse
 
 .left-column[
 ## Faces
+]
+
+.right-column[
+* Faces were "deprecated" but won't be removed: https://www.puppet.com/docs/puppet/5.5/deprecated_api.html
+
+* Kelsey Hightower explaining faces in 2011: https://www.youtube.com/watch?v=WUlYEJ-fpfU
+
+* Faces are used heavily within Puppet: https://github.com/puppetlabs/puppet/tree/main/lib/puppet/face
+
+* "Puppet Applications" are the successor for Faces
+]
+
+???
+---
+
+.left-column[
+## Faces
 ### config
 ]
 
@@ -572,11 +589,56 @@ class: center, middle, inverse
 ]
 
 .right-column[
+* [github.com/voxpupuli/puppet-catalog_diff](https://github.com/voxpupuli/puppet-catalog_diff/tree/master?tab=readme-ov-file#overview)
 
+* The tool can automatically compile the catalogs for both your new and older servers/environments. It can ask the master to use PuppetDB to compile the catalog for the last known environment with the last known facts. It can then validate against PuppetDB that the node is still active. This filtered list should contain only machines that have not been decommissioned in PuppetDB (important as compiling their catalogs would also reactive them and their exports otherwise).
 ]
 
 ???
 
+* `catalog` face exists in core, `catalog diff` is custom, maintained by Vox Pupuli
+
+---
+
+.left-column[
+## Faces
+### config
+### catalog diff
+]
+
+.right-column[
+* `puppet catalog diff puppet.example.com/production puppet.example.com/staging --filter_old_env`
+
+* `puppet catalog diff /foo/old/node1.example.com.json /foo/new/node1.example.com.json`
+
+* [voxpupuli.org/puppet-catalog-diff-viewer](https://voxpupuli.org/puppet-catalog-diff-viewer/)
+]
+
+???
+
+* diff catalogs from PuppetDB or compile new ones
+* diff between environments
+* diff between different Puppet infrastructures
+* Visualize reports
+* deserves its own talk, Raphael did some in the past, linked in the README.md
+
+---
+
+.left-column[
+## Faces
+### config
+### catalog diff
+### node exports
+]
+
+.right-column[
+
+* provide a list of exported resources in PuppetDB
+
+* `watch 'puppet node exports'`
+
+* [forge.puppet.com/zack/exports](https://forge.puppet.com/modules/zack/exports/readme#example-usage)
+]
 ---
 
 .left-column[

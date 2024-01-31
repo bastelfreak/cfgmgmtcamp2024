@@ -489,6 +489,120 @@ package { 'htop':
 
 .left-column[
 ## RAL
+### Find Software
+### Modify Software
+### Purge Software
+]
+.right-column[
+* [puppet.com/docs/puppet/8/type#resources](https://www.puppet.com/docs/puppet/8/type#resources)
+
+![img](resources.png)
+]
+
+---
+
+.left-column[
+## RAL
+### Find Software
+### Modify Software
+### Purge Software
+]
+.right-column[
+```puppet
+resources { 'User':
+  purge => true,
+}
+
+resources { 'Package':
+  purge => true,
+}
+
+```
+]
+
+???
+
+* purge all users not managed by puppet
+---
+
+count: false
+
+.left-column[
+## RAL
+### Find Software
+### Modify Software
+### Purge Software
+]
+.right-column[
+```puppet
+resources { 'User':
+  purge => true,
+}
+
+resources { 'Package':
+  purge => true,
+}
+
+resources { 'Service':
+  purge => true,
+  noop  => false,
+}
+```
+]
+
+???
+
+* noop is nice because it will inform you about unmanaged/unexpected resources
+* not so useful for packages or users
+* but what about database users
+* backends in your F5?
+---
+
+.left-column[
+## RAL
+### Find Software
+### Modify Software
+### Purge Software
+]
+.right-column[
+* [forge.puppet.com/crayfishx/purge](https://forge.puppet.com/modules/crayfishx/purge/readme)
+
+![img](purge.png)
+
+]
+
+---
+
+.left-column[
+## RAL
+### Find Software
+### Modify Software
+### Purge Software
+]
+.right-column[
+![img](purge2.png)
+
+]
+
+---
+
+.left-column[
+## RAL
+### Find Software
+### Modify Software
+### Purge Software
+]
+.right-column[
+* [enterprisemodules.com/blog/2022/02/cleanup-temporary-files-in-puppet](https://www.enterprisemodules.com/blog/2022/02/cleanup-temporary-files-in-puppet/)
+
+![img](cleanup.png)
+
+]
+
+---
+???
+.left-column[
+## RAL
 ]
 .right-column[
 * Further documentation
@@ -926,7 +1040,6 @@ count: false
 
 ---
 
-
 .left-column[
 ## CLI
 ### trace
@@ -938,6 +1051,139 @@ count: false
 ![img](http.png)
 ]
 ---
+
+.left-column[
+## CLI
+### trace
+### debug
+### http_debug
+### evaltrace
+]
+
+.right-column[
+* `puppet agent -t --evaltrace`
+
+* prints all resources and their evaluation time
+
+![img](eval.png)
+]
+
+???
+
+* Who knows that option?
+* naming things is hard. evaltrace written together. http_debug uses an underscore
+---
+
+.left-column[
+## CLI
+### trace
+### debug
+### http_debug
+### evaltrace
+]
+
+.right-column[
+* `puppet agent -t --trace --evaltrace --debug --evaltrace`
+
+* All options can be combined
+
+]
+---
+
+count: false
+
+.left-column[
+## CLI
+### trace
+### debug
+### http_debug
+### evaltrace
+]
+
+.right-column[
+* `puppet agent -t --trace --evaltrace --debug --evaltrace`
+
+* All options can be combined
+
+* You will need a very big screen!
+]
+
+???
+
+* This is a lot of output
+
+---
+
+.left-column[
+## CLI
+### trace
+### debug
+### http_debug
+### evaltrace
+### timing
+]
+
+.right-column[
+* `puppet facts show` # show all facts
+]
+
+---
+
+count: false
+
+.left-column[
+## CLI
+### trace
+### debug
+### http_debug
+### evaltrace
+### timing
+]
+
+.right-column[
+* `puppet facts show` # show all facts
+
+* `puppet facts show fact` # show a single fact named fact
+]
+
+---
+
+count: false
+
+.left-column[
+## CLI
+### trace
+### debug
+### http_debug
+### evaltrace
+### timing
+]
+
+.right-column[
+* `puppet facts show` # show all facts
+
+* `puppet facts show fact` # show a single fact named fact
+
+* `puppet facts show --timing` # timing per fact resolution
+]
+
+---
+
+.left-column[
+## CLI
+### trace
+### debug
+### http_debug
+### evaltrace
+### timing
+]
+
+.right-column[
+![img](facter.png)
+]
+
+---
+
 
 .left-column[
 ## Conclusion

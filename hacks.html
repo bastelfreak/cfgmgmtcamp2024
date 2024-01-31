@@ -638,21 +638,305 @@ count: false
 * `watch 'puppet node exports'`
 
 * [forge.puppet.com/zack/exports](https://forge.puppet.com/modules/zack/exports/readme#example-usage)
+
 ]
+
 ---
 
+count: false
+
 .left-column[
-## Find Software
-## Cleanup
+## Faces
+### config
+### catalog diff
+### node exports
 ]
 
 .right-column[
+
+* provide a list of exported resources in PuppetDB
+
+* `watch 'puppet node exports'`
+
+* [forge.puppet.com/zack/exports](https://forge.puppet.com/modules/zack/exports/readme#example-usage)
+
+* Lists all exported resources
+
+* Can be filtered for resource types (for example File)
+]
+
+---
+
+count: false
+
+.left-column[
+## Faces
+### config
+### catalog diff
+### node exports
+]
+
+.right-column[
+
+* provide a list of exported resources in PuppetDB
+
+* `watch 'puppet node exports'`
+
+* [forge.puppet.com/zack/exports](https://forge.puppet.com/modules/zack/exports/readme#example-usage)
+
+* Lists all exported resources
+
+* Can be filtered for resource types (for example File)
+
+* Doesn't work properly with Puppet 8 :sadface:
+
+![img](exports.png)
+]
+
+???
+
+It uses a deprecated HTTP client
+---
+
+class: center, middle, inverse
+
+# Puppet<br/>CLI
+
+???
+
+---
+
+.left-column[
+## CLI
+]
+
+.right-column[
+
+* `puppet agent -t`
+
+]
+
+---
+
+count:false
+
+.left-column[
+## CLI
+]
+
+.right-column[
+
+* `puppet agent -t`
+
+* `puppet agent --test`
+]
+
+???
+
+those are equal
+
+---
+
+count:false
+
+.left-column[
+## CLI
+]
+
+.right-column[
+
+* `puppet agent -t`
+
+* `puppet agent --test`
+
+* `puppet agent --verbose --no-daemonize --no-usecacheonfailure --detailed-exitcodes --no-splay --show_diff`
+]
+---
+
+count: false
+
+.left-column[
+## CLI
+]
+
+.right-column[
+
+* `puppet agent -t`
+
+* `puppet agent --test`
+
+* `puppet agent --verbose --no-daemonize --no-usecacheonfailure --detailed-exitcodes --no-splay --show_diff`
+
+* Who knows more CLI invocations?
+
 
 ]
 
 ???
 
+---
 
+count: false
+
+.left-column[
+## CLI
+]
+
+.right-column[
+
+* `puppet agent -t`
+
+* `puppet agent --test`
+
+* `puppet agent --verbose --no-daemonize --no-usecacheonfailure --detailed-exitcodes --no-splay --show_diff`
+
+* Who knows more CLI invocations?
+
+* Some Options are only available on the CLI: `puppet agent --help`
+
+* Every config option can be set and overwritten on CLI: https://www.puppet.com/docs/puppet/8/configuration.html
+
+* `puppet agent -t --no-noop`
+
+]
+
+???
+
+* puppet.conf can be overwritten on CLI
+* See --no-splay above to disable options
+
+* Add noop=true to puppet.conf
+* when you want to apply changes, run with --no-noop
+
+---
+
+
+.left-column[
+## CLI
+### trace
+]
+
+.right-column[
+* `--trace` is a common option in the Ruby ecosystem
+
+* available in puppet faces as well
+
+![img](trace.png)
+
+]
+
+???
+
+* Remember our error from earlier? It had no line/file information
+* now it has, exports.rb line 63
+
+---
+
+.left-column[
+## CLI
+### trace
+### debug
+]
+
+.right-column[
+
+* `puppet agent -t --debug`
+
+* Prints all HTTP calls to puppetserver
+
+* Lists all resources and if they are already in the desired state
+]
+
+???
+
+---
+
+count:false
+
+.left-column[
+## CLI
+### trace
+### debug
+]
+
+.right-column[
+
+* `puppet agent -t --debug`
+
+* Prints all HTTP calls to puppetserver
+
+* Lists all resources and if they are already in the desired state
+
+* prints all debug messages
+
+* Facter: `Facter.debug('my debug text')`
+
+* Puppet Types/Provider: `Puppet.debug('my other debug text')`
+]
+
+???
+
+* Now we can extend our code with many debug messages
+* but what if we need to dig deep
+---
+
+.left-column[
+## CLI
+### trace
+### debug
+### http_debug
+]
+
+.right-column[
+![img](deeper.jpg)
+]
+---
+
+.left-column[
+## CLI
+### trace
+### debug
+### http_debug
+]
+
+.right-column[
+* `puppet agent -t --http_debug`
+
+* Dumps every HTTP Payload and Headers from/to Puppetserver
+]
+
+---
+
+count: false
+
+.left-column[
+## CLI
+### trace
+### debug
+### http_debug
+]
+
+.right-column[
+* `puppet agent -t --http_debug`
+
+* Dumps every HTTP Payload and Headers from/to Puppetserver
+
+* As base64
+]
+
+---
+
+
+.left-column[
+## CLI
+### trace
+### debug
+### http_debug
+]
+
+.right-column[
+![img](http.png)
+]
 ---
 
 .left-column[

@@ -1460,12 +1460,81 @@ count: false
 ]
 
 .right-column[
-![img](lldpd.png)
+* [github.com/voxpupuli/puppet-puppet_ca_utils](https://github.com/voxpupuli/puppet-puppet_ca_utils)
+
+* Can crosssign Puppet CAs
 ]
 
 
 ???
 
+* Helpful if you've a new and old Infra and want to migrate agents
+* You can configure if Agents should be able to talk to both CAs or Agent from A only to A and B but B not do A
+
+---
+
+count: false
+
+.left-column[
+## Hacks & Patterns
+### LLDP
+### Puppet CA
+]
+
+.right-column[
+* [github.com/voxpupuli/puppet-puppet_ca_utils](https://github.com/voxpupuli/puppet-puppet_ca_utils)
+
+* Can crosssign Puppet CAs
+
+* [github.com/voxpupuli/puppet-puppet_certificate](https://github.com/voxpupuli/puppet-puppet_certificate)
+
+* Allow Agents to renew their own certificate
+
+* Update CSR/SAN attributes
+
+```puppet
+file { '/etc/puppetlabs/puppet/csr_attributes.yaml':
+  ensure  => file,
+  owner   => 'root',
+  group   => 'root',
+  mode    => '0440',
+  content => epp('example/csr_attributes.yaml.epp'),
+}
+
+~> puppet_certificate { $certname:
+  ensure      => present,
+  waitforcert => 60,
+  onrefresh   => regenerate,
+}
+```
+]
+
+
+???
+
+---
+
+.left-column[
+## Hacks & Patterns
+### LLDP
+### Puppet CA
+]
+
+.right-column[
+* Use PuppetCA for personal certificates
+
+* Use personal certificates to authenticate to local services
+
+* `puppet ssl bootstrap --certname "$(hostname -f)-${USER}"`
+
+![img](ca.png)
+]
+
+???
+
+* Nginx for example can validate client TLS certificates
+
+* admins can use that for internal sites
 ---
 
 .left-column[

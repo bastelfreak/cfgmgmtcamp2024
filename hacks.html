@@ -1440,6 +1440,9 @@ count: false
 ![img](lldpd.png)
 ]
 
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
 
 ???
 
@@ -1465,6 +1468,8 @@ count: false
 * Can crosssign Puppet CAs
 ]
 
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
 
 ???
 
@@ -1509,6 +1514,8 @@ file { '/etc/puppetlabs/puppet/csr_attributes.yaml':
 ```
 ]
 
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
 
 ???
 
@@ -1552,6 +1559,8 @@ file { '/etc/puppetlabs/puppet/csr_attributes.yaml':
 * Puppet 8 supports auto cert renewal: [puppet.com/docs/puppet/8/release_notes](https://www.puppet.com/docs/puppet/8/release_notes_puppet#release_notes_puppet_x-8-2-0)
 ]
 
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
 
 ???
 
@@ -1573,6 +1582,9 @@ file { '/etc/puppetlabs/puppet/csr_attributes.yaml':
 ![img](ca.png)
 ]
 
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
 ???
 
 * Nginx for example can validate client TLS certificates
@@ -1592,6 +1604,9 @@ file { '/etc/puppetlabs/puppet/csr_attributes.yaml':
 * Extend a Open Source CA
 ]
 
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
 ???
 
 ---
@@ -1609,11 +1624,14 @@ count: false
 
 * Extend a Open Source CA
 
-* [github.com/puppetlabs/ca_extend]https://github.com/puppetlabs/ca_extend?tab=readme-ov-file#ca_extend()
+* [github.com/puppetlabs/ca_extend](https://github.com/puppetlabs/ca_extend?tab=readme-ov-file#ca_extend)
 
 * Extend a PE CA
 ]
 
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
 ???
 
 ---
@@ -1631,27 +1649,107 @@ count: false
 
 * Extend a Open Source CA
 
-* [github.com/puppetlabs/ca_extend]https://github.com/puppetlabs/ca_extend?tab=readme-ov-file#ca_extend()
+* [github.com/puppetlabs/ca_extend](https://github.com/puppetlabs/ca_extend?tab=readme-ov-file#ca_extend)
 
 * Extend a PE CA
 
 * [My Shell script to extend a CA](https://gist.github.com/bastelfreak/034fca2e7719351fe42c28e7844dace5)
 ]
 
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
 ???
 ---
 
+.left-column[
+## Hacks & Patterns
+### LLDP
+### Puppet CA
+### Clusterfoo
+]
+
+.right-column[
+
+* Use PuppetDB to dynamically build your clusters
+
+```puppet
+# Get FQDNs for all cluster peers
+$query = "inventory[certname] {
+  trusted.extensions.pp_role = 'consul' and trusted.extensions.pp_region = 'eu-01'
+}"
+$nodes = puppetdb_query($query).map |$value| { $value["certname"] }
+```
+
+]
+
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+---
+
+count: false
+
+.left-column[
+## Hacks & Patterns
+### LLDP
+### Puppet CA
+### Clusterfoo
+]
+
+.right-column[
+
+* Use PuppetDB to dynamically build your clusters
+
+```puppet
+# Get FQDNs for all cluster peers
+$query = "inventory[certname] {
+  trusted.extensions.pp_role = 'consul' and trusted.extensions.pp_region = 'eu-01'
+}"
+$nodes = puppetdb_query($query).map |$value| { $value["certname"] }
+```
+
+```puppet
+@@sshkey{$trusted['certname']:
+  host_aliases => [$facts['ipaddress6'], $facts['ipaddress']],
+  type         => "ssh-${type}",
+  key          => $facts['ssh'][$type]['key'],
+  # defaults to /etc/ssh/ so all users can use it
+  #target       => '/root/.ssh/known_hosts',
+  tag          => $trusted['extensions']['pp_role'],
+}
+## import host key
+Sshkey <<| tag == $trusted['extensions']['pp_role'] and title != $trusted['certname'] |>>
+```
+]
+
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+* Often systems want a list of all backend systems, consul for example
+
+* Works of course for IPs and ssh_authorized_keys and others as well
+---
+class: center, middle, inverse
+
+# Conclusion<br/><br/>
+
+???
+
+---
 .left-column[
 ## Conclusion
 ]
 
 .right-column[
 
-* You should publish your internal puppet modules
+* Puppet is very flexible and suiteable for different usecases
 
-* Vox Pupuli is awesome, please contribute!
+* There are many hidden gems and extensions available
 
-* We've great tooling to scale module handling
+* More docs from Puppet/Perforce for edgecases & advanced users would be awesome!
 
 ]
 
@@ -1663,17 +1761,18 @@ count: false
 * Need help with opensourcing your puppet modules or rubygems or CI setup? Let us know
 ---
 
+count: false
+
 .left-column[
 ## Conclusion
 ]
 
 .right-column[
+* Puppet is very flexible and suiteable for different usecases
 
-* You should publish your internal puppet modules
+* There are many hidden gems and extensions available
 
-* Vox Pupuli is awesome, please contribute!
-
-* We've great tooling to scale module handling
+* More docs from Puppet/Perforce for edgecases & advanced users would be awesome!
 
 * For feedback: `bastelfreak` on <a href="https://slack.puppet.com/">slack.puppet.com</a>/Libera.Chat IRC or [tim@bastelfreak.de](mailto:tim@bastelfreak.de)
 

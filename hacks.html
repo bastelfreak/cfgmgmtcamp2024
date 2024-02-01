@@ -651,6 +651,44 @@ resources { 'Service':
 
 .left-column[
 ## RAL
+### Find Resources
+### Modify Resources
+### Purge Resources
+]
+.right-column[
+
+![img](tidy.png)
+
+]
+
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+---
+
+.left-column[
+## RAL
+### Find Resources
+### Modify Resources
+### Purge Resources
+]
+.right-column[
+
+![img](cleanup.png)
+
+]
+
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+---
+
+.left-column[
+## RAL
 ]
 .right-column[
 * Further documentation
@@ -1352,7 +1390,14 @@ class: center, middle, inverse
 ]
 
 .right-column[
-![img](facter.png)
+* LLDP - Link Layer Distribution Protocol
+
+* IEEE-802.1AB standard
+
+* exchange information between direct layer 2 peers
+
+* Common protocol for Routers, Switches *and servers*
+
 ]
 
 <a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
@@ -1360,15 +1405,66 @@ class: center, middle, inverse
 
 ---
 
+count: false
+
+.left-column[
+## Hacks & Patterns
+### LLDP
+]
+
+.right-column[
+* LLDP - Link Layer Distribution Protocol
+
+* IEEE-802.1AB standard
+
+* exchange information between direct layer 2 peers
+
+* Common protocol for Routers, Switches *and servers*
+
+* Linux: (github.com/lldpd/lldpd)[https://github.com/lldpd/lldpd]
+
+* Puppet Module: (forge.puppet.com/puppet/lldpd)[https://forge.puppet.com/modules/puppet/lldpd/readme]
+]
+
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+---
+
+.left-column[
+## Hacks & Patterns
+### LLDP
+]
+
+.right-column[
+![img](lldpd.png)
+]
 
 
+???
+
+* VMs/Hypervisor run LLDP
+* VM knows on which HV it is running
+* Hypervisor knows to wich switches it's connected
+* Switches know which hypervisors and routers are connected
+* All those information can be stored to PuppetDB
+* the puppet module has a fact that exports the data
+* you can query PuppetDB to find out which devices are connected to each other and plot them live!
+* I would love to throw this into a graph database at some point
+---
+
+.left-column[
+## Hacks & Patterns
+### LLDP
+### Puppet CA
+]
+
+.right-column[
+![img](lldpd.png)
+]
 
 
-
-
-
-
-
+???
 
 
 

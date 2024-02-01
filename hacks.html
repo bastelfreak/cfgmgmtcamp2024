@@ -632,6 +632,8 @@ resources { 'Service':
 ]
 .right-column[
 
+* Purging files and directories
+
 * [enterprisemodules.com/blog/2022/02/cleanup-temporary-files-in-puppet](https://www.enterprisemodules.com/blog/2022/02/cleanup-temporary-files-in-puppet/)
 
 ![img](cleanup.png)
@@ -819,6 +821,8 @@ count: false
 .right-column[
 ![img](diff.png)
 ]
+
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
 
 ---
 
@@ -1215,7 +1219,7 @@ count: false
 ]
 
 .right-column[
-* `puppet agent -t --trace --evaltrace --debug --evaltrace`
+* `puppet agent -t --trace --evaltrace --debug --http_debug`
 
 * All options can be combined
 
@@ -1237,7 +1241,7 @@ count: false
 ]
 
 .right-column[
-* `puppet agent -t --trace --evaltrace --debug --evaltrace`
+* `puppet agent -t --trace --evaltrace --debug --http_debug`
 
 * All options can be combined
 
@@ -1334,6 +1338,38 @@ count: false
 .footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
 
 ---
+class: center, middle, inverse
+
+# Design Pattern<br/>and Hacks
+
+???
+
+---
+
+.left-column[
+## Hacks & Patterns
+### LLDP
+]
+
+.right-column[
+![img](facter.png)
+]
+
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+---
+
+
+
+
+
+
+
+
+
+
+
 
 
 .left-column[

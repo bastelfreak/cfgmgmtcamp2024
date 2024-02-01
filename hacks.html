@@ -1514,6 +1514,49 @@ file { '/etc/puppetlabs/puppet/csr_attributes.yaml':
 
 ---
 
+count: false
+
+.left-column[
+## Hacks & Patterns
+### LLDP
+### Puppet CA
+]
+
+.right-column[
+* [github.com/voxpupuli/puppet-puppet_ca_utils](https://github.com/voxpupuli/puppet-puppet_ca_utils)
+
+* Can crosssign Puppet CAs
+
+* [github.com/voxpupuli/puppet-puppet_certificate](https://github.com/voxpupuli/puppet-puppet_certificate)
+
+* Allow Agents to renew their own certificate
+
+* Update CSR/SAN attributes
+
+```puppet
+file { '/etc/puppetlabs/puppet/csr_attributes.yaml':
+  ensure  => file,
+  owner   => 'root',
+  group   => 'root',
+  mode    => '0440',
+  content => epp('example/csr_attributes.yaml.epp'),
+}
+
+~> puppet_certificate { $certname:
+  ensure      => present,
+  waitforcert => 60,
+  onrefresh   => regenerate,
+}
+```
+
+* Puppet 8 supports auto cert renewal: [puppet.com/docs/puppet/8/release_notes](https://www.puppet.com/docs/puppet/8/release_notes_puppet#release_notes_puppet_x-8-2-0)
+]
+
+
+???
+
+---
+
 .left-column[
 ## Hacks & Patterns
 ### LLDP

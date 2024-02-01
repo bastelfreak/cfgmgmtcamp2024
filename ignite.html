@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Why Open Source brings more value to business?</title>
+    <title>Vox Pupuli - Community Update</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <style type="text/css">
       @font-face {
@@ -29,8 +29,16 @@
           url(0AKsP294HTD-nvJgucYTaJ0EAVxt0G0biEntp43Qt6E.ttf)
             format("truetype");
       }
+      @font-face {
+        font-family: "Nunito Sans";
+        font-style: normal;
+        font-weight: 400;
+        src: local("Nunito Sans Regular"), local("NunitoSans-Regular"),
+          url(NunitoSans-Regular.ttf)
+            format("truetype");
+      }
       body {
-        font-family: "Droid Serif";
+        font-family: "Nunito Sans";
       }
       h1,
       h2,
@@ -101,15 +109,50 @@
         font-size: 0.9em;
         padding: 15px;
       }
-      .inverse {
-        background: #272822;
+      .inverseold {
+        background: #09194F;
+        background-image: url(dots.png), url(BD_Wortmarke_weiss.png);
+        background-repeat: no-repeat;
+        background-position: top 12px left 20px, top 12px right 20px;
+        background-size: 30%, 10%;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverseold h1,
+      .inverseold h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+      .inverse, .inversedoubleheading {
+        background: #09194F;
+        background-image: url(dots.png), url(BD_Wortmarke_weiss.png), url(circle.png);
+        background-repeat: no-repeat;
+        background-position: top 12px left 20px, top 12px right 20px, center center;
+        background-size: 30%, 10%, 50%;
         color: #777872;
         text-shadow: 0 0 20px #333;
       }
       .inverse h1,
-      .inverse h2 {
+      .inverse h2,
+      .inversedoubleheading h1,
+      .inversedoubleheading h2 {
         color: #f3f3f3;
+      }
+      .inverse h2 {
         line-height: 0.8em;
+        margin-top: 0.8em;
+      }
+      .inverse h1 {
+        margin-top: 0em;
+        line-height: 1.1em;
+      }
+      .inversedoubleheading h1 {
+        margin-top: -1em;
+        line-height: 1.1em;
+      }
+      .inversedoubleheading h2 {
+        line-height: 0.8em;
+        margin-top: 0.8em;
       }
       /* Slide-specific styling */
       #slide-inverse .footnote {
@@ -185,7 +228,7 @@
         width: 100%;
       }
       @page {
-        size: 1024px 786px;
+        size: 1920px 1080px;
         margin: 0;
       }
       @media print {
@@ -205,9 +248,8 @@
 
 class: center, middle, inverse
 
-# Why Open Source brings more value to business?
+# Vox Pupuli<br/> Community Update
 
-## Or why you should publish your Puppet modules
 
 ???
 
@@ -226,7 +268,8 @@ class: center, middle, inverse
 
 * Senior IT Automation Consultant at [example42](https://example42.com/)
 
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+
 ???
 
 *
@@ -252,7 +295,7 @@ class: center, middle, inverse
 * Maintain many many Puppet modules
 
 ]
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
 .footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
 
 ???

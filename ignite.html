@@ -370,93 +370,19 @@ class: center, middle, inverse
 * 161 members in the GitHub org with merge access in 2022, 186 last year, 211 right now.
 
 ---
-class: center, middle, inverse
-
-# How to design a good Puppet module?
-
-???
-
----
 
 .left-column[
-## Module Design
-### Status Quo
+## Vox Pupuli
+### What?
+### Who?
 ]
 
 .right-column[
-
-* You write your own component Puppet modules
-
-* You also want to reuse Open Source component modules from others
+* Sysadmins maintaining Puppet in their Company
 
 ]
 
-
-???
-
-* a component module manages a component of the infrastructure
-* a specific software
-* like nginx or mysql
----
-.left-column[
-## Module Design
-### Status Quo
-]
-
-.right-column[
-
-* You write your own component Puppet modules
-
-* You also want to reuse Open Source component modules from others
-
-* Many of your servers are very similar, but not identical
-]
-
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
-.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
-
-???
-
-* all servers use your internal DNS resolver in /etc/resolv.conf
-* except for the DNS server itself, which forwards to cloudflare
-
----
-.left-column[
-## Module Design
-### Status Quo
-]
-
-.right-column[
-
-* You write your own component Puppet modules
-
-* You also want to reuse Open Source component modules from others
-
-* Many of your servers are very similar, but not identical
-
-* Design requirement 1: Use internal and external component modules in parallel
-
-* Design requirement 2: Assign those component modules to groups of servers
-]
-
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
-.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
-
-???
-
-
----
-.left-column[
-## Module Design
-### Status Quo
-### Roles & Profiles
-]
-
-.right-column[
-.nowidth[![imagefoo](rapwoh.svg)]
-]
-
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
 .footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
 
 ???
@@ -464,299 +390,336 @@ class: center, middle, inverse
 ---
 
 .left-column[
-## Module Design
-### Status Quo
-### Roles & Profiles
-### Data vs Code
+## Vox Pupuli
+### What?
+### Who?
 ]
 
 .right-column[
-* People that write Puppet Code might not provide the data
+* Sysadmins maintaining Puppet in their Company
+
+* Consultants that extend Puppet modules for a customer
 ]
 
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
-.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
-
-???
-
----
-.left-column[
-## Module Design
-### Status Quo
-### Roles & Profiles
-### Data vs Code
-]
-
-.right-column[
-* People that write Puppet Code might not provide the data
-
-* System administrators team A write Puppet code
-
-* System administrators from team B provide ip addresses
-
-* Product owner provide version numbers
-
-]
-
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
-.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
-
-???
-
----
-.left-column[
-## Module Design
-### Status Quo
-### Roles & Profiles
-### Data vs Code
-]
-
-.right-column[
-* People that write Puppet Code might not provide the data
-
-* System administrators team A write Puppet code
-
-* System administrators from team B provide ip addresses
-
-* Product owner provide version numbers
-
-* Secrets should come from a secret store like Hashicorp Vault
-]
-
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
-.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
-
-???
-
----
-.left-column[
-## Module Design
-### Status Quo
-### Roles & Profiles
-### Data vs Code
-]
-
-.right-column[
-* People that write Puppet Code might not provide the data
-
-* System administrators team A write Puppet code
-
-* System administrators from team B provide ip addresses
-
-* Product owner provide version numbers
-
-* Secrets should come from a secret store like Hashicorp Vault
-
-* Design requirement 3: Separate data and code
-]
-
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
-.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
-
-???
-
----
-.left-column[
-## Module Design
-### Status Quo
-### Roles & Profiles
-### Data vs Code
-]
-
-.right-column[
-.nowidth[![imagefoo](rap.svg)]
-]
-
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
-.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
-
-???
-
----
-.left-column[
-## Module Design
-### Status Quo
-### Roles & Profiles
-### Data vs Code
-]
-
-.right-column[
-* It's hard for enforce code design/architecture with CI jobs
-
-* You might leak private information if you publish an existing internal module
-]
-
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
-.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
-
-???
-
----
-.left-column[
-## Why Open Sourcing?
-### Technical aspects
-]
-
-.right-column[
-* Publish a module from the beginning
-
-* This enforces a proper structure in your code
-]
-
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
-.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
-
-???
-
----
-.left-column[
-## Why Open Sourcing?
-### Technical aspects
-]
-
-.right-column[
-* Publish a module from the beginning
-
-* This enforces a proper structure in your code
-
-* This ensures secrets are never added to it
-]
-
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
-.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
-
-???
-
----
-.left-column[
-## Why Open Sourcing?
-### Technical aspects
-]
-
-.right-column[
-* Publish a module from the beginning
-
-* This enforces a proper structure in your code
-
-* This ensures secrets are never added to it
-
-* Many companies still don't have internal CI
-
-  * There are free CI services for open source software!
-]
-
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
-.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
-
-???
-
----
-.left-column[
-## Why Open Sourcing?
-### Technical aspects
-### Vox Pupuli
-]
-
-.right-column[
-Vox Pupuli sales pitch:
-
-* Vox Pupuli has proper tooling to handle many modules
-
-* Vox Pupuli maintains community guidelines and best practices
-
-* Working in a collective enforces proper documentation and git commits
-
-]
-
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
-.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
-
-???
-
-* It's important to document code (changes) properly
-* new hires need to understand it
-* this gets tricky if documentation is reviewed by a small group of people that work with you on a daily basis
-* people that don't contribute to open source often have issue explaining code changes properly in git commits
----
-.left-column[
-## Why Open Sourcing?
-### Technical aspects
-### Company advantages
-]
-
-.right-column[
-
-* Companies that do open source work are recognized in the community
-
-  * Attract new hires through open source work
-
-* Benefit from the knowledge and contributions within the community
-
-* Benefit from the tooling within the community
-]
-
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
 .footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
 
 ???
 
 ---
 
-class: center, middle, inverse
-
-# Conclusion
-
-
-???
-
----
-
-
 .left-column[
-## Conclusion
+## Vox Pupuli
+### What?
+### Who?
 ]
 
 .right-column[
+* Sysadmins maintaining Puppet in their Company
 
-* You should publish your internal puppet modules
+* Consultants that extend Puppet modules for a customer
 
-* Vox Pupuli is awesome, please contribute!
-
-* We've great tooling to scale module handling
-
+* Domain specific experts (e.g. RabbitMQ)
 ]
 
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
 .footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
 
 ???
 
-* We've some open issues with collected ideas. We need feedback!
 ---
 
 .left-column[
-## Conclusion
+## Vox Pupuli
+### What?
+### Who?
+]
+
+.right-column[
+* Sysadmins maintaining Puppet in their Company
+
+* Consultants that extend Puppet modules for a customer
+
+* Domain specific experts (e.g. RabbitMQ)
+
+* Puppet/Perforce employees
+]
+
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+---
+
+.left-column[
+## Vox Pupuli
+### What?
+### Who?
+### How?
 ]
 
 .right-column[
 
-* You should publish your internal puppet modules
+* We have awesome tooling to scale development and handle contributions
 
-* Vox Pupuli is awesome, please contribute!
+* [github.com/voxpupuli/voxpupuli-test](https://github.com/voxpupuli/voxpupuli-test?tab=readme-ov-file#voxpupuli-test-gem) - unit testing & static code validation
+]
 
-* We've great tooling to scale module handling
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
 
-* For feedback: `bastelfreak` on slack or [tim@bastelfreak.de](mailto:tim@bastelfreak.de)
+???
+
+---
+
+.left-column[
+## Vox Pupuli
+### What?
+### Who?
+### How?
+]
+
+.right-column[
+
+* We have awesome tooling to scale development and handle contributions
+
+* [github.com/voxpupuli/voxpupuli-test](https://github.com/voxpupuli/voxpupuli-test?tab=readme-ov-file#voxpupuli-test-gem) - unit testing & static code validation
+
+* [github.com/voxpupuli/voxpupuli-acceptance](https://github.com/voxpupuli/voxpupuli-acceptance?tab=readme-ov-file#voxpupuli-acceptance-gem) - Beaker acceptance testing
+]
+
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+---
+
+.left-column[
+## Vox Pupuli
+### What?
+### Who?
+### How?
+]
+
+.right-column[
+
+* We have awesome tooling to scale development and handle contributions
+
+* [github.com/voxpupuli/voxpupuli-test](https://github.com/voxpupuli/voxpupuli-test?tab=readme-ov-file#voxpupuli-test-gem) - unit testing & static code validation
+
+* [github.com/voxpupuli/voxpupuli-acceptance](https://github.com/voxpupuli/voxpupuli-acceptance?tab=readme-ov-file#voxpupuli-acceptance-gem) - Beaker acceptance testing
+
+* [github.com/voxpupuli/voxpupuli-release](https://github.com/voxpupuli/voxpupuli-release?tab=readme-ov-file#vox-pupuli-release-gem) - Creates and publishes module releases
+
+* [github.com/voxpupuli/gha-puppet](https://github.com/voxpupuli/gha-puppet/tree/v2?tab=readme-ov-file#puppet-github-actions) - Reuseable GHA workflow that ties everything together
+]
+
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+---
+
+.left-column[
+## Vox Pupuli
+### What?
+### Who?
+### How?
+### Funding?!
+]
+
+.right-column[
+* Since Cfgmgmtcamp 2023 we accept donations!
+
+  * [github.com/sponsors/voxpupuli](https://github.com/sponsors/voxpupuli)
+
+  * [opencollective.com/vox-pupuli](https://opencollective.com/vox-pupuli)
+]
+
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+---
+
+.left-column[
+## Vox Pupuli
+### What?
+### Who?
+### How?
+### Funding?!
+]
+
+.right-column[
+* Since Cfgmgmtcamp 2023 we accept donations!
+
+  * [github.com/sponsors/voxpupuli](https://github.com/sponsors/voxpupuli)
+
+  * [opencollective.com/vox-pupuli](https://opencollective.com/vox-pupuli)
+
+* We buy stickers (I've stickers for you!)
+
+  * Puppet/Perforce also sponsors us stickers
+
+* Our little Vox Pupuli Fox
+
+  * Come to the Puppet room to get some
+]
+
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+---
+
+.left-column[
+## Vox Pupuli
+### What?
+### Who?
+### How?
+### Funding?!
+]
+
+.right-column[
+* Since Cfgmgmtcamp 2023 we accept donations!
+
+  * [github.com/sponsors/voxpupuli](https://github.com/sponsors/voxpupuli)
+
+  * [opencollective.com/vox-pupuli](https://opencollective.com/vox-pupuli)
+
+* We buy stickers (I've stickers for you!)
+
+  * Puppet/Perforce also sponsors us stickers
+
+* Our little Vox Pupuli Fox
+
+  * Come to the Puppet room to get some
+
+* Part of Vox Pupulis success is a good working *and fast* pipeline
+
+  * GitHub sponsors us 80 concurrent runners
+
+  * Hetzner sponsors us cloud resources
+]
+
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+---
+
+.left-column[
+## Vox Pupuli
+### What?
+### Who?
+### How?
+### Funding?!
+]
+
+.right-column[
+* Since Cfgmgmtcamp 2023 we accept donations!
+
+  * [github.com/sponsors/voxpupuli](https://github.com/sponsors/voxpupuli)
+
+  * [opencollective.com/vox-pupuli](https://opencollective.com/vox-pupuli)
+
+* We pay for additional CI costs
+
+]
+
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+---
+
+.left-column[
+## Vox Pupuli
+### What?
+### Who?
+### How?
+### Funding?!
+]
+
+.right-column[
+* Since Cfgmgmtcamp 2023 we accept donations!
+
+  * [github.com/sponsors/voxpupuli](https://github.com/sponsors/voxpupuli)
+
+  * [opencollective.com/vox-pupuli](https://opencollective.com/vox-pupuli)
+
+* We pay for additional CI costs
+
+* We want to sponsor conference trips and meetups for our members
+]
+
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+---
+
+.left-column[
+## Vox Pupuli
+### What?
+### Who?
+### How?
+### Funding?!
+### Contribute?!
+]
+
+.right-column[
+* Please support us with donations!
+
+* Please contribute to the ecosystem!
+]
+
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+.footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+---
+
+.left-column[
+## Vox Pupuli
+### What?
+### Who?
+### How?
+### Funding?!
+### Contribute?!
+]
+
+.right-column[
+* Please support us with donations!
+
+* Please contribute to the ecosystem!
+
+* Check open PRs/Issues at [github.com/voxpupuli](https://github.com/voxpupuli)
+
+* Come to `#voxpupuli` on Liber.chat IRC
+
+  * Or `#voxpupuli` on [slack.puppet.com](https://slack.puppet.com/)
+
+* Come to the Puppet room B.2.015
 
 ### Thanks for your attention!
+
 ]
 
-<a href='https://example42.com' alt='company website example42'><img src="logo-540x540-3.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
+<a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
 .footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
 
 ???
 
-* We've some open issues with collected ideas. We need feedback!
     </textarea>
     <script src="remark-latest.min.js"></script>
     <script>

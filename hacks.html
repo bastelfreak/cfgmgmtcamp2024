@@ -319,6 +319,9 @@ Who knows the RAL?
 .footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
 
 ---
+
+count: false
+
 .left-column[
 ## RAL
 ]
@@ -341,6 +344,9 @@ package { 'htop':
 .footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
 
 ---
+
+count: false
+
 .left-column[
 ## RAL
 ]
@@ -351,6 +357,12 @@ package { 'htop':
 * Abstracts package manager away into Puppet resources
 
 * Implemented via types and providers
+
+```puppet
+package { 'htop':
+  ensure => 'installed',
+}
+```
 
 * List available types on CLI
 
@@ -370,7 +382,7 @@ package { 'htop':
 .right-column[
 * RAL can be triggered on the CLI!
 
-* `puppet resource package foo`
+* `puppet resource package htop`
 
 ```puppet
 package { 'htop':
@@ -385,6 +397,7 @@ package { 'htop':
 
 ---
 
+count: false
 
 .left-column[
 ## RAL
@@ -394,7 +407,14 @@ package { 'htop':
 .right-column[
 * RAL can be triggered on the CLI!
 
-* `puppet resource package foo`
+* `puppet resource package htop`
+
+```puppet
+package { 'htop':
+  ensure   => '3.3.0-1',
+  provider => 'pacman',
+}
+```
 
 * Can output all instances of a resource type
 
@@ -420,12 +440,6 @@ package { 'yard':
 * Puppet needs to know the current state of a resource before code is applied
 * required to detect if changes are needed
 
-
----
-
-class: center, middle, inverse
-
-# Modify<br/>Software
 
 ---
 
@@ -457,6 +471,8 @@ package { 'htop':
 * You can also pass the other parameters
 ---
 
+count: false
+
 .left-column[
 ## RAL
 ### Find Resources
@@ -466,11 +482,19 @@ package { 'htop':
 .right-column[
 * Can modify a resource instance
 
-* `puppet resource package foo ensure=absent`
+* `puppet resource package htop ensure=absent`
+
+```puppet
+Notice: /Package[htop]/ensure: removed
+package { 'htop':
+  ensure   => 'absent',
+  provider => 'pacman',
+}
+```
 
 * Can modify a resource instance with debug output!
 
-* `puppet resource package foo ensure=absent --debug`
+* `puppet resource package htop ensure=absent --debug`
 ]
 
 <a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
@@ -491,15 +515,23 @@ count: false
 .right-column[
 * Can modify a resource instance
 
-* `puppet resource package foo ensure=absent`
+* `puppet resource package htop ensure=absent`
 
+```puppet
+Notice: /Package[htop]/ensure: removed
+package { 'htop':
+  ensure   => 'absent',
+  provider => 'pacman',
+}
+
+```
 * Can modify a resource instance with debug output!
 
-* `puppet resource package foo ensure=absent --debug`
+* `puppet resource package htop ensure=absent --debug`
 
 * Can simulate a change!
 
-* `puppet resource package foo ensure=absent --debug --noop`
+* `puppet resource package htop ensure=absent --debug --noop`
 ]
 
 <a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
@@ -524,6 +556,14 @@ count: false
 
 <a href='https://betadots.de' alt='company website betadots'><img src="logo-1181x1181.png" alt="drawing" style="position: fixed; bottom: 12px; left: 20px; width: 100px;"/></a>
 .footnote[[@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+* Who knows the resources resource type?
+
+* Who used it?
+
+* Who likes it?
 
 ---
 

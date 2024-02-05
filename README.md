@@ -11,7 +11,7 @@ us)!
 * Online Repo: [github.com/bastelfreak/cfgmgmtcamp2024](https://github.com/bastelfreak/cfgmgmtcamp2024?tab=readme-ov-file#vox-pupuli---community-update-ignate-talk)
 * Schedule: [cfp.cfgmgmtcamp.org/2024/talk/7PJR78/](https://cfp.cfgmgmtcamp.org/2024/talk/7PJR78/)
 * Online Slides: [bastelfreak.de/cfgmgmtcamp2024/ignite.html](https://bastelfreak.de/cfgmgmtcamp2024/ignite.html)
-* PDF:
+* PDF: [github.com/bastelfreak/cfgmgmtcamp2024/blob/main/Vox_Pupuli_-_Community_Update.pdf](https://github.com/bastelfreak/cfgmgmtcamp2024/blob/main/Vox_Pupuli_-_Community_Update.pdf)
 
 ## Puppet hacks you didn't know you were looking for
 
@@ -28,7 +28,7 @@ tuning and debugging your puppetserver(s)
 * Online Repo: [github.com/bastelfreak/cfgmgmtcamp2024](https://github.com/bastelfreak/cfgmgmtcamp2024?tab=readme-ov-file#puppet-hacks-you-didnt-know-you-were-looking-for)
 * Schedule: [https://cfp.cfgmgmtcamp.org/2024/talk/BRBVJK/](https://cfp.cfgmgmtcamp.org/2024/talk/BRBVJK/)
 * Online Slides: [bastelfreak.de/cfgmgmtcamp2024/hacks.html](https://bastelfreak.de/cfgmgmtcamp2024/hacks.html)
-* PDF:
+* PDF: [github.com/bastelfreak/cfgmgmtcamp2024/blob/main/Puppet_hacks_you_didn_t_know_you_were_looking_for.pdf](https://github.com/bastelfreak/cfgmgmtcamp2024/blob/main/Puppet_hacks_you_didn_t_know_you_were_looking_for.pdf)
 
 ## License & Infos
 

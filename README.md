@@ -34,3 +34,9 @@ tuning and debugging your puppetserver(s)
 
 * This project contains two licenses. The code is licensed as [GNU Affero General Public License v3.0](LICENSE). The documentation/text is licsensed as [CC BY-NC-SA 4.0](LICENSE2).
 * You can find more talks from bastelfreak in his [repository](https://github.com/bastelfreak/talks) (he is also available for Puppet consulting)
+
+## Pictures
+
+From David Swan during the 'Puppet hacks you didn't know you were looking for' talk
+
+![bastel on stage](20240207_180350.jpg)

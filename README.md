@@ -40,3 +40,8 @@ tuning and debugging your puppetserver(s)
 From David Swan during the 'Puppet hacks you didn't know you were looking for' talk
 
 ![bastel on stage](20240207_180350.jpg)
+
+[cc-by 4.0](https://creativecommons.org/licenses/by/4.0/) licensed pictures from Jan Koppe
+![bastel on stage](mpv-shot0003_art.jpg)
+
+![bastel on big stage](A7C05485.jpg)

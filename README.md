@@ -12,6 +12,7 @@ us)!
 * Schedule: [cfp.cfgmgmtcamp.org/2024/talk/7PJR78/](https://cfp.cfgmgmtcamp.org/2024/talk/7PJR78/)
 * Online Slides: [bastelfreak.de/cfgmgmtcamp2024/ignite.html](https://bastelfreak.de/cfgmgmtcamp2024/ignite.html)
 * PDF: [github.com/bastelfreak/cfgmgmtcamp2024/blob/main/Vox_Pupuli_-_Community_Update.pdf](https://github.com/bastelfreak/cfgmgmtcamp2024/blob/main/Vox_Pupuli_-_Community_Update.pdf)
+* Recording: https://www.youtube.com/watch?v=yxZ8jf8qI6Q
 
 ## Puppet hacks you didn't know you were looking for
 
